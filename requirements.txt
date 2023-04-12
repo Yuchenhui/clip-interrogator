@@ -1,9 +1,12 @@
-torch
+torch~=2.0.0
 torchvision
-Pillow
-requests
-safetensors
-tqdm
+Pillow~=9.5.0
+requests~=2.28.2
+safetensors~=0.3.0
+tqdm~=4.65.0
 open_clip_torch
 accelerate
+gradio~=3.25.0
+cog~=0.6.1
 transformers>=4.27.1
+setuptools==67.6.1

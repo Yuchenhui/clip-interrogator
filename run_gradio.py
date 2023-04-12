@@ -96,4 +96,4 @@ with gr.Blocks() as ui:
     with gr.Tab("Analyze"):
         analyze_tab()
 
-ui.launch(show_api=False, debug=True, share=args.share)
+ui.launch(show_api=True, debug=False, share=True)

@@ -9,7 +9,8 @@ import torch
 
 from dataclasses import dataclass
 from PIL import Image
-from transformers import AutoProcessor, AutoModelForCausalLM, BlipForConditionalGeneration, Blip2ForConditionalGeneration
+from transformers import AutoProcessor, AutoModelForCausalLM, BlipForConditionalGeneration, \
+    Blip2ForConditionalGeneration
 from tqdm import tqdm
 from typing import List, Optional
 
@@ -229,7 +230,8 @@ class Interrogator():
         image_features = self.image_to_features(image)
         merged = _merge_tables([self.artists, self.flavors, self.mediums, self.movements, self.trendings], self)
         tops = merged.rank(image_features, max_flavors)
-        return _truncate_to_fit(caption + ", " + ", ".join(tops), self.tokenize)
+        result = _truncate_to_fit(caption + ", " + ", ".join(tops), self.tokenize)
+        return result
 
     def interrogate_negative(self, image: Image, max_flavors: int = 32) -> str:
         """Negative mode chains together the most dissimilar terms to the image. It can be used
