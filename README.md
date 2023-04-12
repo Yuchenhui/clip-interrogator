@@ -1,3 +1,8 @@
+# Build
+Go to WSL
+Install cog
+cog build -t test
+
 # clip-interrogator
 
 *Want to figure out what a good prompt might be to create new images like an existing one? The **CLIP Interrogator** is here to get you answers!*
